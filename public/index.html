@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Project Management Platform</h1>
+        <button id="logoutBtn" style="display: none;">Logout</button>
+    </header>
+
+    <main id="app">
+        <div id="authContainer">
+            <h2 id="authTitle">Login</h2>
+            <form id="authForm">
+                <input type="text" id="nameInput" placeholder="Name" style="display: none;">
+                <input type="email" id="emailInput" placeholder="Email" required>
+                <input type="password" id="passwordInput" placeholder="Password" required>
+                <button type="submit" id="authSubmitBtn">Login</button>
+            </form>
+            <p id="authToggle">Don't have an account? <a href="#" id="authToggleLink">Register</a></p>
+        </div>
+
+        <div id="mainContent" style="display: none;">
+            <nav>
+                <button id="projectsBtn" class="active">Projects</button>
+                <button id="tasksBtn" style="display: none;">Tasks</button>
+                <button id="calendarBtn">Calendar</button>
+            </nav>
+
+            <div id="projectsContainer">
+                <h2>My Projects</h2>
+                <form id="addProjectForm">
+                    <input type="text" id="projectName" placeholder="Project Name" required>
+                    <input type="text" id="projectDescription" placeholder="Description">
+                    <input type="date" id="projectDeadline" required>
+                    <button type="submit">Add Project</button>
+                </form>
+                <div id="projectList"></div>
+            </div>
+
+            <div id="tasksContainer" style="display: none;">
+                <h2>Tasks</h2>
+                <form id="addTaskForm">
+                    <input type="text" id="taskName" placeholder="Task Name" required>
+                    <input type="text" id="taskDescription" placeholder="Description">
+                    <input type="date" id="taskDeadline" required>
+                    <button type="submit">Add Task</button>
+                </form>
+                <div id="taskList"></div>
+            </div>
+
+            <div id="calendarContainer" style="display: none;">
+                <h2 id="calendarTitle"></h2>
+                <div id="calendarControls">
+                    <button id="prevMonth">&lt;</button>
+                    <button id="nextMonth">&gt;</button>
+                </div>
+                <div id="calendar"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
